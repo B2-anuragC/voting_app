@@ -1,9 +1,11 @@
-import { Module } from '@nestjs/common';
-import { ControllerController } from './controller/controller.controller';
-import { ServiceService } from './service/service.service';
+import { Module } from "@nestjs/common"
+import {ConfigModule} from "@nestjs/config"
+import { PollsController } from "./polls.controller"
+import { PollsService } from "./polls.service"
 
 @Module({
-  controllers: [ControllerController],
-  providers: [ServiceService]
+    imports: [ConfigModule],
+    controllers: [PollsController],
+    providers: [PollsService]
 })
 export class PollsModule {}
